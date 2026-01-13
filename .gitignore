@@ -1,0 +1,19 @@
+# Embeddings
+**/*.npy
+**/embeddings/*.csv
+
+# Python
+__pycache__/
+*.pyc
+
+# Jupyter Notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.env/
+
+# OS / IDE files
+.DS_Store
+.idea/
+.vscode/
