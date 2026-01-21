@@ -1,4 +1,4 @@
-# ChemPrompt: LLM-based Molecular Representation via Chemical Descriptors
+# ChemPrompt: A Genetic Algorithm-based Prompt Engineering Framework for Enhanced QSAR Prediction with Large Language Models
 
 ChemPrompt is a framework that integrates Large Language Models (LLMs) with RDKit molecular descriptors to enhance molecular representation learning for QSAR analysis and descriptor selection studies.
 
@@ -22,7 +22,7 @@ source ~/.bashrc
 
 ---
 
-## 5.1 Prompt with Descriptors is better than Ones with No Descriptor
+## 5.1 Incorporating Descriptors Enhances Prompt Representation
 This section compares full descriptor-informed prompts against prompts without any descriptor information.  
 The experiments are conducted using two notebooks: **full_descriptors.ipynb** and **no_description.ipynb**.  
 
@@ -32,7 +32,7 @@ The performance difference between descriptor-informed and descriptor-free promp
 
 ---
 
-## 5.2 Existence of Optimal Subset of Descriptors
+## 5.2 Impact of Descriptor Selection on Model Performance
 This section tests whether there exists a subset of descriptors that yields strong performance.  
 Random subsets of 10, 30, 50, 70, and 90 descriptors are sampled 100 times each.  
 
@@ -50,7 +50,7 @@ Each mapping condition is iterated, and performance is evaluated to investigate 
 
 ---
 
-## 5.3 Discovery of Optimal Subset of Descriptors via Genetic Algorithm (GA)
+## 5.3 Optimization of Descriptor Subsets via Genetic Algorithm
 This section introduces a feature selection process using statistical ranking followed by a Genetic Algorithm (GA).  
 After descriptor filtering, univariate analysis (**f_regression**) is performed between each descriptor value and label.  
 Descriptors are ranked by statistical significance, and the top **K = 50** features are selected to initialize the GA process.  
@@ -71,7 +71,7 @@ The **full_flag** will be utilized in Section **5.6 Selection**
 
 ---
 
-## 5.4 ChemPrompt Outperformed Traditional Methods
+## 5.4 ChemPrompt Outperforms Traditional QSAR Baselines
 This section compares ChemPrompt with conventional machine learning and neural network approaches.  
 
 Three types of experiments are included:
@@ -83,7 +83,7 @@ Results demonstrate that ChemPrompt outperforms these traditional approaches by 
 
 ---
 
-## 5.5 LLM Inference is Inaccurate in QSAR
+## 5.5 Limitations of Direct LLM Inference in QSAR
 This section examines the accuracy of LLM inference in QSAR-style question answering.  
 Each notebook (**{MODEL_NAME}.ipynb**) loads a specific Hugging Face model and performs Q&A-style prediction following the model’s recommended prompt template.  
 Prompt instruction formats differ across datasets.  
@@ -96,7 +96,7 @@ This ensures compatibility with the GPT-OSS model architecture.
 
 ---
 
-## 5.6 No Degradation of ChemPrompt with Quantization
+## 5.6 Robustness of ChemPrompt Against Quantization
 This section evaluates the robustness of ChemPrompt under numerical quantization using the optimal descriptor subsets discovered in Section 5.3.  
 **Quantization.ipynb** loads the model in different precisions and compares performance:  
 “full” corresponds to **float32**, and “half” corresponds to **float16**.  
